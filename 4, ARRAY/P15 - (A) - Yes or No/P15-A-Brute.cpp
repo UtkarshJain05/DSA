@@ -1,0 +1,26 @@
+// 2 Sum (A) - (Brute) --> TC : O(N^2) ; SC : O(1).
+
+#include <bits/stdc++.h>
+using namespace std;
+
+string sum(vector<int> arr, int t)
+{
+    int n = arr.size();
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[i] + arr[j] == t)
+            {
+                return "Yes.";
+            }
+        }
+    }
+    return "No.";
+}
+
+int main()
+{
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << sum(arr, 18);
+}
