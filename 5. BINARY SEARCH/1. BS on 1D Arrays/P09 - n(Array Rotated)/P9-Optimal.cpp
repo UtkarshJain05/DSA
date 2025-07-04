@@ -12,6 +12,11 @@ int fnc(vector<int> &arr)
     while (low <= high)
     {
         int mid = (low + high) / 2;
+        if (arr[mid] < mini)
+        {
+            mini = arr[mid];
+            idx = mid;
+        }
 
         // Duplicates Handling.  --> TC:O(N/2).
         if (arr[low] == arr[mid] && arr[mid] == arr[high])
@@ -57,6 +62,6 @@ int fnc(vector<int> &arr)
 
 int main()
 {
-    vector<int> arr = {5, 6, 7, 8, 9, 0, 1, 2, 3, 4};
+    vector<int> arr = {6, 7, 1, 2, 3, 4, 5};
     cout << fnc(arr);
 }
