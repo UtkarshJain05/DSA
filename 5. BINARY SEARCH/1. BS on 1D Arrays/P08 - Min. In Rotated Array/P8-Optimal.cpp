@@ -11,6 +11,7 @@ int fnc(vector<int> &arr)
     while (low <= high)
     {
         int mid = (low + high) / 2;
+        mini = min(arr[mid], mini);
 
         // Checking Duplicates
         if (arr[low] == arr[mid] && arr[mid] == arr[high])
@@ -19,7 +20,7 @@ int fnc(vector<int> &arr)
             high--;
             continue;
         }
-        
+
         // If only Sorted Array Left.
         if (arr[low] <= arr[high])
         {
@@ -46,6 +47,6 @@ int fnc(vector<int> &arr)
 
 int main()
 {
-    vector<int> arr = {7, 8, 9, 10, 1, 2, 3, 4, 5, 6};
+    vector<int> arr = {6, 7, 1, 2, 3, 4, 5};
     cout << fnc(arr);
 }
