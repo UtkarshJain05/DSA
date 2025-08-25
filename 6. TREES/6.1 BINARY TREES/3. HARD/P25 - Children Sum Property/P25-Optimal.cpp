@@ -22,9 +22,7 @@ void fnc(Node *root)
     if (root->right)
         child += root->right->data;
 
-    if (child >= root->data)
-        root->data = child;
-    else
+    if (child < root->data)
     {
         if (root->left)
             root->left->data = root->data;
